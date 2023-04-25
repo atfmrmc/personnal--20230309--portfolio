@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="ressources/icons/blue_star.svg"
+      type="image/x-icon"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/9d34ec166c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>atfmrmc.com</title>
+  </head>
+  <body>
+    <header>
+      <!-- 🤍✈️ Menu -->
+
+      <nav>
+        <button class="hammed open hoverbtn" onclick="openmenu()">MENU</button>
+        <div id="menu">
+          <p>
+            <a class="hoverbtn" onclick="closemenu()"> EXIT</a>
+          </p>
+          <p>
+            <a class="hoverbtn" href="#about_me" onclick="closemenu()">
+              ABOUT</a
+            >
+          </p>
+          <p>
+            <a class="hoverbtn" href="#my_work" onclick="closemenu()">
+              MY WORK</a
+            >
+          </p>
+        </div>
+        <button class="magic-hover magic-hover__square hoverbtn">
+          <a href="#my_work">MY WORK</a>
+        </button>
+      </nav>
+
+      <script>
+        var menu = document.getElementById("menu");
+        function openmenu() {
+          menu.style.top = "0";
+        }
+        function closemenu() {
+          menu.style.top = "-100vh";
+        }
+      </script>
+    </header>
+    <main class="container">
+      <!-- 🧡🉑 Header Center Text -->
+
+      <div id="name_hero">
+        <p id="name">Artur</p>
+        <p id="surname">Moreira Machado</p>
+      </div>
+
+      <!-- 🧡🌍 Background Earth  -->
+
+      <img
+        id="earth_background"
+        src="ressources/background/earthtransparentblue.png"
+        alt="Earth"
+      />
+
+      <!-- 🧡🦀 Marquee  -->
+
+      <div class="marquee">
+        <p>GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i></p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+        <p aria-hidden="true">
+          GRAPHIC DESIGNER<i class="fa-solid fa-globe"> </i>
+        </p>
+      </div>
+    </main>
+
+    <!-- 💚🐉 About Me -->
+
+    <section id="about_me">
+      <!-- 💚🐸 Tittle -->
+
+      <div id="about_me_1" class="about_me_cell">
+        <h2>ABOUT ME</h2>
+      </div>
+
+      <!-- 💚🐊 Content -->
+
+      <div id="about_me_2" class="about_me_cell">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+        <div class="tab-titles">
+          <h3 class="tab-links active-link" onclick="opentab('skills')">
+            Skills
+          </h3>
+          <h3 class="tab-links" onclick="opentab('experience')">Experience</h3>
+          <h3 class="tab-links" onclick="opentab('education')">Education</h3>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <h4>Qualités :</h4>
+          <br />
+          Curiosité, Autonomie, Capacité d’adaptation, Rigueur, Passion,
+          Polyvalence <br /><br />
+          <h4>Création :</h4>
+          <br />
+          Adobe Photoshop, Adobe Illustrator, Adobe Premiere, Figma
+          <br /><br />
+          <h4>Développement Web :</h4>
+          <br />
+          HTML, CSS, PHP, Webflow <br /><br />
+          <h4>Bureautique :</h4>
+          <br />
+          Microsoft Word, Microsoft Excel, Microsoft PowerPoint
+          <br /><br />
+          <h4>Travail en équipe :</h4>
+          <br />
+          Microsoft Teams, Notion, Trello <br /><br />
+          <h4>Langues :</h4>
+          <br />
+          Portugais (Langue Maternelle), Anglais (C1), French (C1), Espagnol
+          (B1)
+          <br />
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li>
+              <h4><span>A-G-net Propreté & Services</span></h4>
+              <br />2018 – Aujourd’hui, Agent Polyvalent <br />
+              Février 2021 – Avril 2021, Stagiaire <br />
+              Janvier 2017, Stagiaire
+            </li>
+            <li>
+              <h4><span>D3E Electronique</span></h4>
+              <br />Octobre 2021 – Juin 2022, Alternant Assistant Ressources
+              Humaines
+            </li>
+            <li><span>+5 mois de stage</span><br /></li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li>
+              <h4><span>BUT Métiers Multimédia d’Internet</span></h4>
+              <br />2022 - Aujourd’hui, IUT de Troyes
+            </li>
+            <li>
+              <h4>
+                <span>Titre Professionnel d’Assistant Ressources Humaines</span>
+              </h4>
+              <br />2021 – 2022, Yschool, Troyes
+            </li>
+            <li>
+              <h4><span>BTS Gestion de la PME</span></h4>
+              <br />2019 – 2021, Lycée Marie de Champagne, BTS Gestion de la PME
+              2019 – 2021, Lycée Marie de Champagne, Troyes BAC G
+            </li>
+            <li>
+              <h4><span>BAC Gestion et Administration</span></h4>
+              <br />2015 – 2018, Lycée Marie de Champagne, Troyes
+            </li>
+          </ul>
+        </div>
+
+        <!-- 💚🕴🏻 Script About Me-->
+
+        <script>
+          var tablinks = document.querySelectorAll(".tab-links");
+          var tabcontents = document.querySelectorAll(".tab-contents");
+
+          function opentab(tabname) {
+            for (tablink of tablinks) {
+              tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+              tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+          }
+        </script>
+      </div>
+
+      <!-- 💚🦖 Photo -->
+
+      <div id="about_me_3" class="about_me_cell"></div>
+    </section>
+
+    <!-- ❤️⚜️ My Work -->
+
+    <section class="container my_work" id="my_work">
+      <div class="my_work_tittle_cell" id="my_work_cell1"><h2>MY WORK</h2></div>
+      <div class="my_work_content_cell" id="my_work_cell2">
+        <h3>WR112 - Integration</h3>
+        <ul>
+          <li>
+            <a
+              class="hoverbtn_my_work"
+              href="travaux/r112/sequence1/sequence1.html"
+              >SEQ1 - Golf La Fontaine</a
+            >
+          </li>
+          <li>
+            <a
+              class="hoverbtn_my_work"
+              href="travaux/r112/sequence2/sequence2.html"
+              >SEQ2 - KINGYO</a
+            >
+          </li>
+          <li>
+            <a
+              class="hoverbtn_my_work"
+              href="travaux/r112/sequence3/sequence3.html"
+              >SEQ3 - Mr Potato</a
+            >
+          </li>
+          <li>
+            <a
+              class="hoverbtn_my_work"
+              href="travaux/r112/sequence4/sequence4.html"
+              >SEQ4 - John doe</a
+            >
+          </li>
+          <li>
+            <a class="hoverbtn_my_work" href="travaux/r112/sequence5/index.html"
+              >SEQ5 - Arboretum</a
+            >
+          </li>
+          <li>
+            <a class="hoverbtn_my_work" href="travaux/r112/sequence6/index.html"
+              >SEQ6 - Gamers Freedom</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="my_work_content_cell" id="my_work_cell3">
+        <h3>WS104 - Production Audiovisuel</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/qpfUeEtkLDg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <button>
+          <a href="ws104/c1_interview.mp4" download class="hoverbtn"
+            >DOWNLOAD VIDEO
+          </a>
+        </button>
+      </div>
+    </section>
+
+    <!-- 🖤🛹 Footer -->
+
+    <footer></footer>
+
+    <!--Mouse-->
+  </body>
+</html>
