@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="js/partials.js"></script>
+    <script type="module" src="js/nav-menu.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/9d34ec166c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="icons/a-star-logo.svg"
+      type="image/x-icon"
+    />
+    <script type="module" src="js/spinning-wireframe.js"></script>
+    <title>PORTFOLIO // ARTUR</title>
+  </head>
+
+  <body>
+    <!-- <my-nav> -->
+
+    <header>
+      <a href="index.html" class="headerLogo">
+        <img src="icons/a-star-logo.svg" alt="Logo" />
+        <p>portfolio // artur moreira machado</p>
+      </a>
+
+      <nav class="menuNav menuNavClosed">
+        <a class="menuBtn">
+          <p>MENU</p>
+          <i class="fa-solid fa-bars"></i> <i class="fa-solid fa-xmark"></i>
+        </a>
+        <div class="menuNavMenu">
+          <a href="#home">home <i class="fa-solid fa-house"></i></a>
+          <a href="#about-me">about me <i class="fa-solid fa-person"></i></a>
+          <a href="#my-work">my work <i class="fa-solid fa-briefcase"></i></a>
+          <a href="#find-me">find me <i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- </my-nav> -->
+
+    <section id="home">
+      <div class="tittle">
+        <p>// portfolio</p>
+        <h1>Artur Moreira Machado</h1>
+        <p>*Full Stack Web Developer</p>
+      </div>
+      <canvas class="spinning-wireframe"></canvas>
+      <div class="backgroundGradiant"></div>
+      <div class="movingGround"></div>
+      <div class="skyBackground"></div>
+    </section>
+    <section id="about-me">
+      <div class="backgroundGradiant"></div>
+      <div class="movingGround"></div>
+    </section>
+    <section id="my-work"></section>
+    <section id="find-me"></section>
+    <my-footer></my-footer>
+  </body>
+</html>
