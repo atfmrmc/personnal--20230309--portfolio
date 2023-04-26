@@ -30,7 +30,7 @@
   --hightlightWhite: rgba(255, 255, 255, 0.2);
   --highlightPurple: #6301c4;
   --highlightPurpleLight: #9941f1;
-  --textWhite: #fff;
+  --textWhite: #e7e7e7;
   --smooth: 0.16s;
   --opacity: 68%;
 }
@@ -148,8 +148,12 @@ nav {
 
 .menuNavMenu a {
   background-color: var(--hightlightWhite);
-  backdrop-filter: blur(var(--grup-2));
-  transition: 0.42s;
+  opacity: var(--opacity);
+  transition: var(--smooth);
+}
+
+.menuNavMenu a:hover {
+  opacity: 100%;
 }
 
 .menuNavClosed .fa-xmark {
@@ -164,6 +168,7 @@ nav {
   background-color: var(--hightlightWhite);
   outline: var(--highlightPurpleLight) 2px solid;
   backdrop-filter: blur(var(--grup-2));
+  opacity: 1 !important;
 }
 
 .menuNavOpened .menuBtn i {
@@ -171,25 +176,64 @@ nav {
 }
 
 .menuNavClosed .menuNavMenu a {
-  transform: translateX(calc(100% + var(--grup1)));
+  animation: menuHide 0.42s forwards;
   pointer-events: none;
 }
 
+.menuNavClosed .menuNavMenu a:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.menuNavClosed .menuNavMenu a:nth-child(2) {
+  animation-delay: calc(0.1s * 2);
+}
+
+.menuNavClosed .menuNavMenu a:nth-child(1) {
+  animation-delay: calc(0.1s * 3);
+}
+
+@keyframes menuHide {
+  0% {
+    transform: translateX(0%);
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(calc(100% + var(--grup1)));
+    filter: blur(2px);
+  }
+}
+
 .menuNavOpened .menuNavMenu a {
-  transform: translateX(0%);
+  transform: translateX(calc(100% + var(--grup1)));
+  animation: menuShow 0.42s forwards;
   pointer-events: all;
 }
 
-.menuNavMenu a:nth-child(2) {
-  transition-delay: 0.1s;
+@keyframes menuShow {
+  0% {
+    transform: translateX(calc(100% + var(--grup1)));
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateX(0%);
+    filter: blur(0px);
+  }
 }
 
-.menuNavMenu a:nth-child(3) {
-  transition-delay: calc(0.1s * 2);
+.menuNavOpened .menuNavMenu a:nth-child(2) {
+  animation-delay: 0.1s;
 }
 
-.menuNavMenu a:nth-child(4) {
-  transition-delay: calc(0.1s * 3);
+.menuNavOpened .menuNavMenu a:nth-child(3) {
+  animation-delay: calc(0.1s * 2);
+}
+
+.menuNavOpened .menuNavMenu a:nth-child(4) {
+  animation-delay: calc(0.1s * 3);
+}
+
+.firstClick .menuNavMenu a {
+  display: none !important;
 }
 
 /* ❤️💛💛💛💛 GLOBAL // FOOTER 💛💛💛💛❤️ */
@@ -224,7 +268,7 @@ nav {
   background-color: var(--highlightPurple);
 }
 
-/* 🧡🧡🧡🧡🧡 INDEX 🧡🧡🧡🧡🧡🧡🧡🧡🧡🧡 */
+/* 🧡🧡🧡🧡🧡 INDEX // GLOBAL 🧡🧡🧡🧡🧡🧡🧡🧡🧡🧡 */
 
 .sectionIntruduction {
   min-height: 80vh;
@@ -233,6 +277,29 @@ nav {
   align-items: center;
   justify-content: center;
   margin-bottom: 10%;
+}
+
+.toolsList h4 {
+  font-size: clamp(var(--grup1), 2vw, 4vw);
+}
+
+.toolsList ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--grup-1);
+}
+
+.toolsList ul li {
+  display: flex;
+  align-items: center;
+  padding: var(--grup-1) var(--grup);
+  gap: var(--grup-2);
+  font-size: clamp(var(--grup), 0.8vw, 1vw);
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--hightlightWhite);
+  border-radius: var(--grup1);
 }
 
 /* 🧡💛💛💛💛 INDEX // HERO 💛💛💛💛🧡 */
@@ -408,36 +475,14 @@ nav {
 
 #about-me article h3 {
   /* grid-column: 1/-1; */
-  font-size: clamp(var(--grup1), 6vw, 8vw);
+  font-size: clamp(var(--grup2), 6vw, 8vw);
+  white-space: normal;
 }
 
 #about-me article div {
   display: flex;
   flex-direction: column;
   gap: var(--grup-1);
-}
-
-#about-me article div h4 {
-  font-size: clamp(var(--grup), 2vw, 4vw);
-}
-
-#about-me article div ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: var(--grup-1);
-}
-
-#about-me article div ul li {
-  display: flex;
-  align-items: center;
-  padding: var(--grup-1) var(--grup);
-  gap: var(--grup-2);
-  font-size: clamp(var(--grup-1), 0.8vw, 1vw);
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: var(--hightlightWhite);
-  border-radius: var(--grup1);
 }
 
 /* 🧡💙💙💙💙 INDEX // MY WORK 💙💙💙💙🧡 */
@@ -503,11 +548,11 @@ nav {
 }
 
 #my-work article {
-  max-width: 1440px;
+  min-height: 80vh;
+  max-width: 720px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  align-items: center;
   gap: var(--grup1);
-  opacity: var(--opacity);
   filter: saturate(0);
   transition: var(--smooth);
 }
@@ -517,11 +562,8 @@ nav {
   filter: saturate(1);
 }
 
-#my-work article aside {
-}
-
 #my-work article aside img {
-  max-width: 980px;
+  max-width: 100%;
 }
 
 #my-work article main {
@@ -532,6 +574,7 @@ nav {
 
 #my-work article main p {
   text-align: justify;
+  color: var(--textWhite);
 }
 
 /* 🧡💜💜💜💜 INDEX // FIND ME 💜💜💜💜🧡 */
