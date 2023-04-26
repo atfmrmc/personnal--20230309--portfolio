@@ -14,6 +14,7 @@ class myFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer>
+      <canvas class="spinning-wireframe"></canvas>
       </footer>
       `;
   }
