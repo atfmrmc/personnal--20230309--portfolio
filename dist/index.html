@@ -17,8 +17,8 @@
     />
     
     <title>PORTFOLIO // ARTUR</title>
-    <script type="module" crossorigin src="./assets/index-2beb8f96.js"></script>
-    <link rel="stylesheet" href="./assets/index-3387698d.css">
+    <script type="module" crossorigin src="./assets/index-ca4666ea.js"></script>
+    <link rel="stylesheet" href="./assets/index-941eecfb.css">
   </head>
 
   <body>
@@ -32,7 +32,7 @@
         <p>portfolio // artur moreira machado</p>
       </a>
 
-      <nav class="menuNav menuNavClosed">
+      <nav class="menuNav menuNavClosed firstClick">
         <a class="menuBtn">
           <p>MENU</p>
           <i class="fa-solid fa-bars"></i> <i class="fa-solid fa-xmark"></i>
@@ -77,7 +77,7 @@
       <article>
         <h3>My stack and tools</h3>
 
-        <div>
+        <div class="toolsList">
           <h4>FRONT-END</h4>
           <ul>
             <li style="opacity: 1"><i class="fa-brands fa-html5"></i>HTML</li>
@@ -92,7 +92,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="toolsList">
           <h4>BACK-END</h4>
           <ul>
             <li style="opacity: 0.7"><i class="fa-brands fa-php"></i>PHP</li>
@@ -111,7 +111,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="toolsList">
           <h4>CMS</h4>
           <ul>
             <li style="opacity: 0.5">
@@ -123,7 +123,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="toolsList">
           <h4>Adobe Creative Suite</h4>
           <ul>
             <li style="opacity: 1">Photoshop</li>
@@ -135,7 +135,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="toolsList">
           <h4>Microsft Office Suite</h4>
           <ul>
             <li style="opacity: 1">
@@ -153,7 +153,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="toolsList">
           <h4>Other tools</h4>
           <ul>
             <li style="opacity: 1">Notion</li>
@@ -175,32 +175,58 @@
         </div>
       </div>
       <div class="workList">
-        <hr />
         <article>
-          <aside>
-            <img
-              src="work/turtale/main.gif"
-              alt="Website showcase"
-              loading="lazy"
-            />
-          </aside>
           <main>
             <h3>// Turtale.</h3>
-            <p>
-              As part of this project, my mission was to create an individual
-              website presenting data of my choice. This data had to be stored
-              in a MYSQL database and easily editable from the website. To do
-              this, a "back office" had to be set up to allow an administrator
-              to easily manage this data by adding, modifying, or deleting
-              records. The selected data had to be complex enough to require the
-              creation of two distinct tables in the database. For each record,
-              a field with a photo (of the product, the movie, the singer, etc.)
-              had to be included. Additionally, at least 50 records had to be
-              present in one of the tables and at least 10 in the second. For
-              one of the tables, there had to be at least 6 fields (excluding
-              the ID) and at least 3 fields in the other (still not counting the
-              ID).
-            </p>
+            <aside>
+              <img
+                src="work/turtale/main.gif"
+                alt="Website showcase"
+                loading="lazy"
+              />
+            </aside>
+            <div class="toolsList">
+              <ul>
+                <li style="opacity: 1">
+                  <i class="fa-brands fa-html5"></i>HTML
+                </li>
+                <li style="opacity: 1">
+                  <i class="fa-brands fa-css3-alt"></i>CSS
+                </li>
+                <li style="opacity: 0.7">
+                  <i class="fa-brands fa-square-js"></i>JS
+                </li>
+                <li style="opacity: 0.7">
+                  <i class="fa-brands fa-php"></i>PHP
+                </li>
+                <li style="opacity: 0.7">
+                  <i class="fa-solid fa-database"></i>MySQL
+                </li>
+                <li style="opacity: 0.5">
+                  <i class="fa-brands fa-docker"></i>Docker
+                </li>
+                <li style="opacity: 1">Photoshop</li>
+                <li style="opacity: 0.7">Figma</li>
+              </ul>
+            </div>
+            <div>
+              <h4>the project</h4>
+              <p>
+                As part of this project, my mission was to create an individual
+                website presenting data of my choice. This data had to be stored
+                in a MYSQL database and easily editable from the website. To do
+                this, a "back office" had to be set up to allow an administrator
+                to easily manage this data by adding, modifying, or deleting
+                records. The selected data had to be complex enough to require
+                the creation of two distinct tables in the database. For each
+                record, a field with a photo (of the product, the movie, the
+                singer, etc.) had to be included. Additionally, at least 50
+                records had to be present in one of the tables and at least 10
+                in the second. For one of the tables, there had to be at least 6
+                fields (excluding the ID) and at least 3 fields in the other
+                (still not counting the ID).
+              </p>
+            </div>
             <div class="workLinks">
               <a href="https://mmi22c13.sae203.ovh/" target="_blank"
                 >Visit Website <i class="fa-solid fa-link"></i
@@ -208,7 +234,9 @@
             </div>
           </main>
         </article>
+
         <hr />
+
         <article>
           <aside>
             <img

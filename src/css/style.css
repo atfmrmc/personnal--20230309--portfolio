@@ -319,12 +319,12 @@ nav {
 }
 
 #home .tittle h1 {
-  font-size: var(--grup3);
+  font-size: clamp(var(--grup3), 4.24vw, 8vw);
   line-height: 100%;
 }
 
 #home .tittle p {
-  font-size: var(--grup1);
+  font-size: clamp(var(--grup1), 1.62vw, 8vw);
   font-weight: 600;
   line-height: 100%;
 }
@@ -428,8 +428,8 @@ nav {
 
 #about-me .hoverTrigger {
   position: relative;
-  width: 120%;
-  padding: 0 10%;
+  width: 100vw;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -505,8 +505,8 @@ nav {
 
 #my-work .hoverTrigger {
   position: relative;
-  width: 120%;
-  padding: 0 10%;
+  width: 100vw;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -539,48 +539,147 @@ nav {
   opacity: 100%;
 }
 
-#my-work .workList {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  grid-template-rows: repeat(auto, 1fr);
-  gap: var(--grup2);
+#my-work main {
+  display: flex;
+  flex-direction: column;
 }
 
-#my-work article {
-  min-height: 80vh;
-  max-width: 720px;
-  display: grid;
+#my-work main div:hover .marquee {
+  opacity: 1;
+}
+
+#my-work .myWorkList,
+#my-work .myOtherWorkList {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--grup1);
-  filter: saturate(0);
+}
+
+#my-work .myWorkList hr,
+#my-work .myOtherWorkList hr {
+  width: 100vw;
+}
+
+#my-work .myWorkList a,
+#my-work .myOtherWorkList a {
+  min-height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--grup-5) 10%;
+  border-radius: 0;
+}
+
+#my-work .myWorkList a:hover,
+#my-work .myOtherWorkList a:hover {
+  opacity: 100%;
+}
+
+#my-work .myWorkList a h4,
+#my-work .myOtherWorkList a h4 {
+  font-size: clamp(var(--grup), 5vw, 8vw);
+  white-space: nowrap;
+}
+
+#my-work .myWorkList a i,
+#my-work .myOtherWorkList a i {
+  font-size: clamp(var(--grup), 4vw, 8vw);
+}
+
+#my-work .marquee {
+  display: flex;
+  width: 100vw;
+  opacity: var(--opacity);
   transition: var(--smooth);
 }
 
-#my-work article:hover {
-  opacity: 1;
-  filter: saturate(1);
-}
-
-#my-work article aside img {
-  max-width: 100%;
-}
-
-#my-work article main {
+#my-work .myWorkList .marquee h3,
+#my-work .myWorkList .marquee p,
+#my-work .myOtherWorkList .marquee h3,
+#my-work .myOtherWorkList .marquee p {
   display: flex;
-  flex-direction: column;
-  gap: var(--grup);
+  align-items: center;
+  font-size: clamp(var(--grup1), 3vw, 8vw);
+  text-transform: uppercase;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
-#my-work article main p {
-  text-align: justify;
-  color: var(--textWhite);
+#my-work .myWorkList .marquee i,
+#my-work .myOtherWorkList .marquee i {
+  font-size: clamp(var(--grup-1), 2.3vw, 8vw);
+  margin: 0 var(--grup);
 }
 
+#my-work .myWorkList .marquee h3,
+#my-work .myWorkList .marquee p {
+  animation: marquee 4.24s linear infinite;
+}
+
+#my-work .myOtherWorkList .marquee h3,
+#my-work .myOtherWorkList .marquee p {
+  animation: marquee 4.24s reverse linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* 🧡💜💜💜💜 INDEX // FIND ME 💜💜💜💜🧡 */
 
 #find-me {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#find-me h2 {
+  z-index: -102;
+  font-size: 16vw;
+  white-space: nowrap;
+  color: var(--textWhite);
+  opacity: 20%;
+  line-height: 30%;
+  transition: var(--smooth);
+}
+
+#find-me .hoverTrigger {
+  position: relative;
+  width: 100vw;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  transition: var(--smooth);
+}
+
+#find-me .hoverTrigger p {
+  color: var(--textWhite);
+  opacity: var(--opacity);
+  font-size: 8vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: var(--smooth) ease-in-out;
+}
+
+#find-me .hoverTrigger:hover p {
+  letter-spacing: initial;
+  opacity: 100%;
+}
+
+#find-me .hoverTrigger span {
+  transition: var(--smooth);
+}
+
+#find-me .hoverTrigger:hover span {
+  color: var(--highlightPurpleLight);
+  opacity: 100%;
 }
