@@ -52,7 +52,7 @@ section {
   padding: 5%;
 }
 
-a {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+.btn:hover {
   opacity: 100%;
   background-color: var(--hightlightWhite);
   backdrop-filter: blur(var(--grup-2));
@@ -238,6 +238,76 @@ nav {
 
 /* ❤️💛💛💛💛 GLOBAL // FOOTER 💛💛💛💛❤️ */
 
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: var(--grup);
+  padding: var(--grup2) 5%;
+}
+
+footer .footerWho {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: var(--grup1);
+}
+
+footer .footerWho p {
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600;
+  opacity: var(--opacity);
+}
+
+footer .footerWho hr {
+  height: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  footer .footerWho p {
+    white-space: normal;
+  }
+
+  footer .footerWho p span {
+    display: none;
+  }
+}
+
+footer .schoolWork {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grup-1);
+}
+
+footer .schoolWork h2 {
+  grid-column: 1 / -1;
+  opacity: var(--opacity);
+}
+
+footer .schoolWork .schoolWorkGrid {
+  display: grid;
+  gap: var(--grup);
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  opacity: var(--opacity);
+}
+
+footer .schoolWork .schoolWorkGrid li {
+  list-style: url("../../static/icons/fat-arrow.svg") inside;
+}
+
+footer .schoolWork .schoolWorkGrid a {
+  color: var(--textWhite);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--smooth);
+}
+
+footer .schoolWork .schoolWorkGrid a:hover {
+  color: var(--highlightPurpleLight);
+}
+
 .spinning-wireframe {
   z-index: -100;
   position: fixed;
@@ -380,7 +450,7 @@ nav {
   top: 0;
   height: 65vh;
   width: 100vw;
-  background-image: url("../../static/textures/9.jpg");
+  background-image: url("../../static/textures/9.webp");
   background-size: 100%;
   filter: grayscale(1) opacity(0.68);
   animation: skyMovingBackgroundAnimation 110s
@@ -634,13 +704,14 @@ nav {
 
 #find-me {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 #find-me h2 {
   z-index: -102;
-  font-size: 16vw;
+  font-size: 13vw;
   white-space: nowrap;
   color: var(--textWhite);
   opacity: 20%;
@@ -682,4 +753,86 @@ nav {
 #find-me .hoverTrigger:hover span {
   color: var(--highlightPurpleLight);
   opacity: 100%;
+}
+
+#find-me .contactInfo {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--grup1);
+  opacity: var(--opacity);
+}
+
+@media screen and (max-width: 768px) {
+  #find-me .contactInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 2fr 1fr;
+  }
+
+  #find-me .contactInfo aside:nth-child(2) {
+    display: none;
+  }
+}
+
+#find-me .contactInfo h3 {
+  grid-column: 1 / -1;
+  font-size: clamp(var(--grup2), 6vw, 8vw);
+}
+
+#find-me .contactInfo main {
+  min-height: 26vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#find-me .contactInfo main a:hover {
+  opacity: 1;
+}
+
+#find-me .contactInfo .contactInfoNoLink span {
+  opacity: 0;
+  transition: var(--smooth);
+}
+
+#find-me .contactInfo .contactInfoNoLink:hover span {
+  opacity: 1;
+}
+
+#find-me .contactInfo .copied .toCopy {
+  display: none;
+}
+
+#find-me .contactInfo .contactInfoNoLink .copyDone {
+  display: none;
+}
+
+#find-me .contactInfo .copied .copyDone {
+  display: block;
+  color: greenyellow;
+}
+
+#find-me .contactInfo .contactInfoNoLink input {
+  pointer-events: none;
+}
+
+#find-me .contactInfo aside {
+  max-width: 100%;
+  height: 100%;
+  background-image: url("../../static/textures/animations/waves.svg");
+  background-size: 150px;
+  background-repeat: repeat;
+  animation: wavesToTheLeft 2s linear infinite;
+  border-radius: var(--grup2);
+  opacity: var(--opacity);
+}
+
+@keyframes wavesToTheLeft {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 150px;
+  }
 }
