@@ -3,6 +3,7 @@ import gsap from "gsap";
 
 // Textures
 const textureLoader = new THREE.TextureLoader();
+const TextureMatcap = textureLoader.load("textures/matcaps/blue-satin.png");
 
 // Canvas
 const canvas = document.querySelector("canvas.spinning-wireframe");
@@ -39,8 +40,8 @@ window.addEventListener("resize", () => {
 
 // Main Crystal
 const SpinningObjectGeometry = new THREE.OctahedronGeometry(1);
-const SpinningObjectMaterial = new THREE.MeshPhysicalMaterial({
-  color: 0x3d3d3d,
+const SpinningObjectMaterial = new THREE.MeshMatcapMaterial({
+  matcap: TextureMatcap,
 });
 // SpinningObjectMaterial.flatShading = true;
 
@@ -113,9 +114,9 @@ aLinks.forEach((aLink) => {
   aLink.addEventListener("mouseenter", () => {
     gsap.to(SpinningObjectMaterial.color, {
       duration: 1,
-      r: 0.3,
-      g: 0.1,
-      b: 0.7,
+      r: 153 / 255,
+      g: 65 / 255,
+      b: 241 / 255,
       ease: "circ.out",
     });
     gsap.to(SpinningObject.position, {
@@ -128,9 +129,9 @@ aLinks.forEach((aLink) => {
   aLink.addEventListener("mouseleave", () => {
     gsap.to(SpinningObjectMaterial.color, {
       duration: 1,
-      r: 61 / 255,
-      g: 61 / 255,
-      b: 61 / 255,
+      r: 255 / 255,
+      g: 255 / 255,
+      b: 255 / 255,
       ease: "circ.out",
     });
     gsap.to(SpinningObject.position, {

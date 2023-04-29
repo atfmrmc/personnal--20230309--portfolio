@@ -10,6 +10,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Outfit", sans-serif;
+  cursor: none;
 }
 
 :root {
@@ -67,7 +68,6 @@ section {
   border-radius: var(--grup1);
   opacity: var(--opacity);
   transition: var(--smooth);
-  cursor: pointer;
 }
 
 .btn:hover {
@@ -338,15 +338,106 @@ footer .schoolWork .schoolWorkGrid a:hover {
   background-color: var(--highlightPurple);
 }
 
+/* ❤️💙💙💙💙 GLOBAL // CURSOR 💙💙💙💙❤️ */
+
+.cursorSmallCircleDiv {
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-size: var(--grup1);
+  font-weight: 600;
+  border-radius: var(--grup2);
+  pointer-events: none;
+  transition: all var(--smooth), top 0s, left 0s;
+}
+
+.cursorSmallCircleDivHover {
+  transform: rotate(45deg) scale(1.5);
+}
+
+.cursorBigCircleDiv {
+  z-index: 998;
+  position: fixed;
+  height: var(--grup2);
+  width: var(--grup2);
+  background-color: var(--hightlightWhite);
+  border-radius: var(--grup2);
+  pointer-events: none;
+  transition: var(--smooth) ease-out;
+}
+
+.cursorBigCircleDivHover {
+  border: var(--highlightPurpleLight) solid 2px;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
 /* 🧡🧡🧡🧡🧡 INDEX // GLOBAL 🧡🧡🧡🧡🧡🧡🧡🧡🧡🧡 */
 
 .sectionIntruduction {
-  min-height: 80vh;
+  margin: 40vh 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10%;
+}
+
+.sectionIntruduction h2 {
+  z-index: -102;
+  white-space: nowrap;
+  font-size: 16vw;
+  color: var(--textWhite);
+  line-height: 30%;
+  transition: 1.62s;
+  opacity: 0%;
+  filter: blur(5px);
+  transform: translateY(50%) scale(0.9);
+}
+
+.onScreen h2 {
+  opacity: 20%;
+  filter: blur(0px);
+  transform: translateY(0%) scale(1);
+}
+
+.sectionIntruduction .hoverTrigger {
+  position: relative;
+  width: 100vw;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  transition: var(--smooth);
+}
+
+.sectionIntruduction .hoverTrigger p {
+  color: var(--textWhite);
+  opacity: var(--opacity);
+  font-size: 8vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 1.62s;
+  transform: translateX(-100%);
+}
+
+.onScreen .hoverTrigger p {
+  letter-spacing: initial;
+  opacity: 100%;
+  transform: translateX(0%);
+}
+
+.sectionIntruduction .hoverTrigger span {
+  transition: color 2.24s;
+}
+
+.onScreen span {
+  color: var(--highlightPurpleLight);
+  opacity: 100%;
 }
 
 .toolsList h4 {
@@ -486,7 +577,7 @@ footer .schoolWork .schoolWorkGrid a:hover {
   flex-direction: column;
 }
 
-#about-me h2 {
+/* #about-me h2 {
   z-index: -102;
   font-size: 16vw;
   white-space: nowrap;
@@ -530,7 +621,7 @@ footer .schoolWork .schoolWorkGrid a:hover {
 #about-me .hoverTrigger:hover span {
   color: var(--highlightPurpleLight);
   opacity: 100%;
-}
+} */
 
 #about-me article {
   display: flex;
@@ -563,7 +654,7 @@ footer .schoolWork .schoolWorkGrid a:hover {
   flex-direction: column;
 }
 
-#my-work h2 {
+/* #my-work h2 {
   z-index: -102;
   font-size: 16vw;
   white-space: nowrap;
@@ -607,7 +698,7 @@ footer .schoolWork .schoolWorkGrid a:hover {
 #my-work .hoverTrigger:hover span {
   color: var(--highlightPurpleLight);
   opacity: 100%;
-}
+} */
 
 #my-work main {
   display: flex;
@@ -710,16 +801,16 @@ footer .schoolWork .schoolWorkGrid a:hover {
 }
 
 #find-me h2 {
-  z-index: -102;
+  /*  z-index: -102; */
   font-size: 13vw;
-  white-space: nowrap;
+  /*   white-space: nowrap;
   color: var(--textWhite);
   opacity: 20%;
   line-height: 30%;
-  transition: var(--smooth);
+  transition: var(--smooth); */
 }
 
-#find-me .hoverTrigger {
+/* #find-me .hoverTrigger {
   position: relative;
   width: 100vw;
   padding: 0 5%;
@@ -753,7 +844,7 @@ footer .schoolWork .schoolWorkGrid a:hover {
 #find-me .hoverTrigger:hover span {
   color: var(--highlightPurpleLight);
   opacity: 100%;
-}
+}  */
 
 #find-me .contactInfo {
   width: 100%;

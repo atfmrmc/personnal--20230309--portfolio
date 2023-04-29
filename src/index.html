@@ -22,6 +22,14 @@
     <script
       type="module"
       src="js/spinning-wireframe.js"></script>
+    <script
+      type="module"
+      src="js/cursor.js"
+      defer></script>
+    <script
+      type="module"
+      src="js/scrolling.js"
+      defer></script>
     <title>PORTFOLIO // ARTUR</title>
   </head>
 
@@ -89,7 +97,7 @@
     <!-- /* 🧡💚💚💚💚 INDEX // ABOUT ME 💚💚💚💚🧡 */ -->
 
     <section id="about-me">
-      <div class="sectionIntruduction">
+      <div class="sectionIntruduction scrollAnimated">
         <h2>about me</h2>
         <div class="hoverTrigger">
           <p>
@@ -192,7 +200,7 @@
     <!-- /* 🧡💙💙💙💙 INDEX // MY WORK 💙💙💙💙🧡 */ -->
 
     <section id="my-work">
-      <div class="sectionIntruduction">
+      <div class="sectionIntruduction scrollAnimated">
         <h2>my work</h2>
         <div class="hoverTrigger">
           <p>some of my <span>projects</span>.</p>
@@ -268,7 +276,7 @@
     <!-- /* 🧡💜💜💜💜 INDEX // FIND ME 💜💜💜💜🧡 */ -->
 
     <section id="find-me">
-      <div class="sectionIntruduction">
+      <div class="sectionIntruduction scrollAnimated">
         <h2>contact me</h2>
         <div class="hoverTrigger">
           <p>lets get it <span>touch!</span></p>
@@ -461,6 +469,8 @@
         </div>
       </div>
     </footer>
+    <div class="cursorSmallCircleDiv">+</div>
+    <div class="cursorBigCircleDiv"></div>
     <canvas class="spinning-wireframe"></canvas>
   </body>
 </html>
