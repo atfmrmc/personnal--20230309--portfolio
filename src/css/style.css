@@ -374,6 +374,16 @@ footer .schoolWork .schoolWorkGrid a:hover {
   transform: rotate(45deg);
 }
 
+@media (pointer: coarse) {
+  .cursorSmallCircleDiv {
+    display: none;
+  }
+
+  .cursorBigCircleDiv {
+    display: none;
+  }
+}
+
 /* 🧡🧡🧡🧡🧡 INDEX // GLOBAL 🧡🧡🧡🧡🧡🧡🧡🧡🧡🧡 */
 
 .sectionIntruduction {

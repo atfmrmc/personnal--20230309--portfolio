@@ -1,6 +1,14 @@
 import * as THREE from "three";
 import gsap from "gsap";
 
+// Selectors
+const cursorSmallCircle = document.querySelector(".cursorSmallCircleDiv");
+const cursorSmallCircleWidth = cursorSmallCircle.offsetWidth;
+const cursorSmallCircleHeight = cursorSmallCircle.offsetHeight;
+const cursorBigCircle = document.querySelector(".cursorBigCircleDiv");
+const cursorBigCircleWidth = cursorBigCircle.offsetWidth;
+const cursorBigCircleHeight = cursorBigCircle.offsetHeight;
+
 // Textures
 const textureLoader = new THREE.TextureLoader();
 const TextureMatcap = textureLoader.load("textures/matcaps/blue-satin.png");
@@ -96,22 +104,41 @@ renderSpinningObject.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 const clock = new THREE.Clock();
 
 // Cursor Position
-const cursor = {
+const cursorThree = {
+  x: 0,
+  y: 0,
+};
+
+const cursorCross = {
   x: 0,
   y: 0,
 };
 
 window.addEventListener("mousemove", (event) => {
-  cursor.x = -(event.clientX / sizeSpinningObject.width - 0.5);
-  cursor.y = event.clientY / sizeSpinningObject.height - 0.5;
+  cursorThree.x = -(event.clientX / sizeSpinningObject.width - 0.5);
+  cursorThree.y = event.clientY / sizeSpinningObject.height - 0.5;
+  cursorCross.x = event.clientX;
+  cursorCross.y = event.clientY;
+  updateCircles();
   //   console.log(cursor.x, cursor.y);
 });
+
+function updateCircles() {
+  cursorSmallCircle.style.top =
+    cursorCross.y - cursorSmallCircleHeight / 2 + "px";
+  cursorSmallCircle.style.left =
+    cursorCross.x - cursorSmallCircleWidth / 2 + "px";
+  cursorBigCircle.style.top = cursorCross.y - cursorBigCircleHeight / 2 + "px";
+  cursorBigCircle.style.left = cursorCross.x - cursorBigCircleWidth / 2 + "px";
+}
 
 // Cursor Hover
 const aLinks = document.querySelectorAll("a");
 
 aLinks.forEach((aLink) => {
   aLink.addEventListener("mouseenter", () => {
+    cursorSmallCircle.classList.add("cursorSmallCircleDivHover");
+    cursorBigCircle.classList.add("cursorBigCircleDivHover");
     gsap.to(SpinningObjectMaterial.color, {
       duration: 1,
       r: 153 / 255,
@@ -127,6 +154,8 @@ aLinks.forEach((aLink) => {
   });
 
   aLink.addEventListener("mouseleave", () => {
+    cursorSmallCircle.classList.remove("cursorSmallCircleDivHover");
+    cursorBigCircle.classList.remove("cursorBigCircleDivHover");
     gsap.to(SpinningObjectMaterial.color, {
       duration: 1,
       r: 255 / 255,
@@ -159,15 +188,15 @@ const animationSpinningObject = () => {
 
   gsap.to(SpinningObject.rotation, {
     duration: 1,
-    x: Math.PI * cursor.y * 0.16 + 0.16,
-    y: Math.PI * -cursor.x + elapsedTime * 0.26,
+    x: Math.PI * cursorThree.y * 0.16 + 0.16,
+    y: Math.PI * -cursorThree.x + elapsedTime * 0.26,
     z: Math.sin(elapsedTime) * 0.16,
   });
 
   gsap.to(SpinningObject.position, {
     duration: 1,
-    x: Math.sin(elapsedTime) * 0.42 + cursor.x * 0.42,
-    y: Math.sin(elapsedTime * 2) * 0.1 + cursor.y * 0.42,
+    x: Math.sin(elapsedTime) * 0.42 + cursorThree.x * 0.42,
+    y: Math.sin(elapsedTime * 2) * 0.1 + cursorThree.y * 0.42,
   });
 
   // // Smaller Crystals
