@@ -1,0 +1,224 @@
+body {
+  background: rgb(235, 235, 235);
+  font-family: "sintony";
+}
+
+#zonecentrale {
+  width: 900px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+}
+
+#titre_principal {
+  position: relative;
+  height: 150px;
+  width: 292px;
+  text-align: center;
+}
+
+#LogoJD {
+  font-family: "Damion", cursive;
+  font-size: 48px;
+}
+
+#LogoJD img {
+  width: 30%;
+}
+
+#LogoEtudiant {
+  font-size: 34px;
+}
+
+nav {
+  position: relative;
+  height: 150px;
+  width: 596px;
+  margin-left: 12px;
+}
+
+#navigation {
+  align-content: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+#navigation li :hover {
+  transition: 250ms;
+  text-decoration: none;
+  color: darkred;
+  border-bottom: 2px solid darkred;
+  padding-bottom: 5px;
+}
+
+#navigation li {
+  float: left;
+  list-style-type: none;
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+#banniere_image {
+  background-image: url(images/batiment.jpg);
+  position: relative;
+  height: 200px;
+  margin-bottom: 12px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#banniere_description {
+  position: absolute;
+  background-color: rgba(24, 24, 24, 0.8);
+  color: white;
+  bottom: 0;
+  width: 876px;
+  padding: 12px 12px;
+  border-radius: 0px 0px 7px 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+section {
+  display: flex;
+}
+
+article {
+  height: 500px;
+  width: 596px;
+  margin-right: 12px;
+}
+
+#IntroTitre {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#IntroText {
+  text-align: justify;
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+aside {
+  position: relative;
+  background-color: rgb(113, 107, 99);
+  margin-bottom: 12px;
+  height: 500px;
+  width: 292px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+#bulle {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: -12px;
+}
+
+#AsideTitre {
+  font-size: 20px;
+  margin: 12px;
+}
+
+#AsidePhoto {
+  display: flex;
+  justify-content: center;
+}
+
+#AsideText {
+  text-align: justify;
+  margin: 12px;
+  font-size: 14px;
+}
+
+#AsideSocialMedia {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  display: flex;
+}
+
+.FooterTitre {
+  font-size: 16px;
+}
+
+#tweet {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 125px;
+  width: 292px;
+  margin-right: 12px;
+  text-align: justify;
+}
+
+.twitter-tweet {
+  font-size: 10px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+#mes_photos {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 125px;
+  width: 292px;
+  margin-right: 12px;
+}
+
+#FooterPhotosBatiments {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#FooterPhotosBatiments img {
+  border-color: darkblue;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#mes_liens {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 125px;
+  width: 292px;
+}
+
+#mes_liens a {
+  color: darkred;
+}
+
+@font-face {
+  font-family: Sintony;
+  src: url(fichiers-base-john-doe\fonts\Sintony\Sintony-Regular.ttf);
+}

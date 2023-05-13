@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Outfit", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, auto);
+  gap: 15px;
+  border: 2px solid #0c0c0c;
+  padding: 15px;
+}
+
+main .calc-affichage {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  grid-column: span 4;
+  min-height: 120px;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 2px solid #ffffff;
+  background-color: #0c0c0c;
+  font-size: 2rem;
+}
+
+main button {
+  height: 100px;
+  width: 100px;
+  background: #000000;
+  border: none;
+  background-color: #0c0c0c;
+  border-bottom: 2px solid #0c0c0c;
+  font-size: 2rem;
+}
+
+main button:hover {
+  background-color: #161616;
+  border-bottom: 2px solid #ffffff;
+}
+
+main .double-cell {
+  grid-column: span 2;
+  width: 100%;
+}
+
+/* Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
