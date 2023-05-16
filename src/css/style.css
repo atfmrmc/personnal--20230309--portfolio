@@ -180,16 +180,20 @@ nav {
   pointer-events: none;
 }
 
-.menuNavClosed .menuNavMenu a:nth-child(3) {
+.menuNavClosed .menuNavMenu a:nth-child(4) {
   animation-delay: 0.1s;
 }
 
-.menuNavClosed .menuNavMenu a:nth-child(2) {
+.menuNavClosed .menuNavMenu a:nth-child(3) {
   animation-delay: calc(0.1s * 2);
 }
 
-.menuNavClosed .menuNavMenu a:nth-child(1) {
+.menuNavClosed .menuNavMenu a:nth-child(2) {
   animation-delay: calc(0.1s * 3);
+}
+
+.menuNavClosed .menuNavMenu a:nth-child(1) {
+  animation-delay: calc(0.1s * 4);
 }
 
 @keyframes menuHide {
@@ -230,6 +234,10 @@ nav {
 
 .menuNavOpened .menuNavMenu a:nth-child(4) {
   animation-delay: calc(0.1s * 3);
+}
+
+.menuNavOpened .menuNavMenu a:nth-child(5) {
+  animation-delay: calc(0.1s * 4);
 }
 
 .firstClick .menuNavMenu a {
