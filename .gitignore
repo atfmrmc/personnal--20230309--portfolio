@@ -2,3 +2,7 @@
 static/versions/2023.25.05 - Version 4/ws104/c1_interview.mp4
 
 .vercel
+
+node_modules/
+
+.idea/
