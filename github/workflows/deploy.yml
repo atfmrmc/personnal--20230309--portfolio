@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - deploy
+      - main
 
 # deploy to vps using docker
 jobs:
