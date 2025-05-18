@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    build:
+      target: prod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wra602d-admin.rule=Host(`atfmrmc.com`)"
+      - "traefik.docker.network=solar-system"
+      - "traefik.http.routers.wra602d-admin.entrypoints=web"

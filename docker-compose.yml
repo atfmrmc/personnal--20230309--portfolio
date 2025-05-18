@@ -1,0 +1,10 @@
+services:
+  portfolio:
+    build:
+      context: .
+    networks:
+      - solar-system
+
+networks:
+  solar-system:
+    external: true

@@ -1,0 +1,16 @@
+services:
+  portfolio:
+    build:
+      target: dev                # use the dev stage
+    volumes:
+      - ./:/usr/src/app:delegated
+      - node_modules:/usr/src/app/node_modules
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wra602d-admin.rule=Host(`atfmrmc.localhost`)"
+      - "traefik.docker.network=solar-system"
+      - "traefik.http.routers.wra602d-admin.entrypoints=web"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=5173"
+
+volumes:
+  node_modules:
