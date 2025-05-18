@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: atfmrmc/portfolio-2023:${GIT_COMMIT_HASH:-latest}
+    image: atfmrmc/personnal--20230309--portfolio:${GIT_COMMIT_HASH:-latest}
     build:
       target: prod
     labels:
