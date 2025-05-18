@@ -51,4 +51,5 @@ jobs:
           host: atfmrmc.com
           user: deploy
           ssh_key: ${{ secrets.SUN_DEPLOY_USER_PRIVATE_KEY }}
+          args: "--with-registry-auth"
           env_file: ./envfile
