@@ -26,8 +26,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/dreamsofcode-io/zenstats:latest
-            ghcr.io/dreamsofcode-io/zenstats:${{ github.sha }}
+            ghcr.io/atfmrmc/portfolio-2023:latest
+            ghcr.io/atfmrmc/portfolio-2023:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
