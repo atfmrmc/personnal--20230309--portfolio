@@ -46,7 +46,7 @@ jobs:
       - name: Deploy to Sun (VPS)
         uses: cssnr/stack-deploy-action@v1
         with:
-          name: sun-core
+          name: portfolio-2023
           file: docker-compose.yml,docker-compose.prod.yml
           host: atfmrmc.com
           user: deploy
