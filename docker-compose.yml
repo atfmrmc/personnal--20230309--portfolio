@@ -2,6 +2,9 @@ services:
   portfolio:
     build:
       context: .
+    deploy:
+      update_config:
+        order: start-first
     networks:
       - solar-system
 
