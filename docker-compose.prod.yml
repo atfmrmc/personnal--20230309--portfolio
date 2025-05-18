@@ -1,8 +1,6 @@
 services:
   portfolio:
     image: ghcr.io/atfmrmc/personnal--20230309--portfolio:${GIT_COMMIT_HASH:-latest}
-    build:
-      target: prod
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.wra602d-admin.rule=Host(`atfmrmc.com`)"
