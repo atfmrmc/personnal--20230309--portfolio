@@ -1,18 +1,19 @@
 services:
   portfolio:
     image: ghcr.io/atfmrmc/personnal--20230309--portfolio:${GIT_COMMIT_HASH:-latest}
-    labels:
-      - "traefik.enable=true"
-      # 1) Tell Traefik which internal port to hit:
-      - "traefik.http.services.portfolio.loadbalancer.server.port=80"
-      # 2) Define the HTTP router
-      - "traefik.http.routers.portfolio.rule=Host(`atfmrmc.com`)"
-      - "traefik.http.routers.portfolio.entrypoints=web"
-      # 3) Define the HTTPS router (optional but recommended)
-      - "traefik.http.routers.portfolio-secure.rule=Host(`atfmrmc.com`)"
-      - "traefik.http.routers.portfolio-secure.entrypoints=websecure"
-      - "traefik.http.routers.portfolio-secure.tls=true"
-      - "traefik.http.routers.portfolio-secure.tls.certresolver=myresolver"
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        # 1) Tell Traefik which internal port to hit:
+        - "traefik.http.services.portfolio.loadbalancer.server.port=80"
+        # 2) Define the HTTP router
+        - "traefik.http.routers.portfolio.rule=Host(`atfmrmc.com`)"
+        - "traefik.http.routers.portfolio.entrypoints=web"
+        # 3) Define the HTTPS router (optional but recommended)
+        - "traefik.http.routers.portfolio-secure.rule=Host(`atfmrmc.com`)"
+        - "traefik.http.routers.portfolio-secure.entrypoints=websecure"
+        - "traefik.http.routers.portfolio-secure.tls=true"
+        - "traefik.http.routers.portfolio-secure.tls.certresolver=myresolver"
     networks:
       - solar-system
 
