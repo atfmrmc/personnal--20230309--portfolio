@@ -13,3 +13,9 @@ services:
       - "traefik.http.routers.portfolio-secure.entrypoints=websecure"
       - "traefik.http.routers.portfolio-secure.tls=true"
       - "traefik.http.routers.portfolio-secure.tls.certresolver=myresolver"
+    networks:
+      - solar-system
+
+networks:
+  solar-system:
+    external: true
