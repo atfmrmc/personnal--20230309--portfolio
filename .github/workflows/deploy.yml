@@ -16,13 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install and Configure Credential Helper
+      - name: Install and Configure Credential Helper (using secretservice)
         run: |
           sudo apt-get update
-          sudo apt-get install -y pass
-          docker plugin install docker-credential-pass
-          docker config set creds '{"auths": {"${{ env.REGISTRY }}": {"auth": "$(echo -n "${{ github.actor }}:${{ secrets.CR_PAT }}" | base64)"}}}'
-          docker config set credential-helper "pass"
+          sudo apt-get install -y docker-credential-secretservice
+          mkdir -p ~/.docker
+          echo '{ "credsStore": "secretservice" }' > ~/.docker/config.json
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
