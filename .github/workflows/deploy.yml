@@ -24,7 +24,7 @@ jobs:
       #    password: ${{ secrets.CR_PAT  }}
       - name: Log in to the Container registry
         run: |
-          docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p "${{ secrets.CR_PAT }}"
+          echo "${{ secrets.CR_PAT }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
