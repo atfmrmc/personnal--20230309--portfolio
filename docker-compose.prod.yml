@@ -1,16 +1,16 @@
 services:
-  portfolio:
+  portfolio-2023:
     image: ghcr.io/atfmrmc/personnal--20230309--portfolio:${GIT_COMMIT_HASH:-latest}
     deploy:
       labels:
         - "traefik.enable=true"
         # 1) Tell Traefik which internal port to hit:
-        - "traefik.http.services.portfolio.loadbalancer.server.port=80"
+        - "traefik.http.services.portfolio-2023.loadbalancer.server.port=80"
         # 2) Define the HTTPS router (optional but recommended)
-        - "traefik.http.routers.portfolio.rule=Host(`atfmrmc.com`,`www.atfmrmc.com`)"
-        - "traefik.http.routers.portfolio.entrypoints=websecure"
-        - "traefik.http.routers.portfolio.tls=true"
-        - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
+        - "traefik.http.routers.portfolio-2023.rule=Host(`atfmrmc.com`,`www.atfmrmc.com`)"
+        - "traefik.http.routers.portfolio-2023.entrypoints=websecure"
+        - "traefik.http.routers.portfolio-2023.tls=true"
+        - "traefik.http.routers.portfolio-2023.tls.certresolver=myresolver"
     networks:
       - solar-system
 

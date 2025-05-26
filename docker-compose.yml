@@ -1,5 +1,5 @@
 services:
-  portfolio:
+  portfolio-2023:
     deploy:
       update_config:
         order: start-first

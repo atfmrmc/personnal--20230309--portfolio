@@ -1,5 +1,5 @@
 services:
-  portfolio:
+  portfolio-2023:
     build:
       target: dev                # use the dev stage
     volumes:
@@ -7,10 +7,10 @@ services:
       - node_modules:/usr/src/app/node_modules
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.wra602d-admin.rule=Host(`atfmrmc.localhost`)"
+      - "traefik.http.routers.portfolio-2023.rule=Host(`portfolio-2023.atfmrmc.localhost`)"
       - "traefik.docker.network=solar-system"
-      - "traefik.http.routers.wra602d-admin.entrypoints=web"
-      - "traefik.http.services.portfolio.loadbalancer.server.port=5173"
+      - "traefik.http.routers.portfolio-2023.entrypoints=web"
+      - "traefik.http.services.portfolio-2023.loadbalancer.server.port=5173"
 
 volumes:
   node_modules:
