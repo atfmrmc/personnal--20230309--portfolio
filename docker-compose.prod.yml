@@ -7,7 +7,7 @@ services:
         # 1) Tell Traefik which internal port to hit:
         - "traefik.http.services.portfolio-2023.loadbalancer.server.port=80"
         # 2) Define the HTTPS router (optional but recommended)
-        - "traefik.http.routers.portfolio-2023.rule=Host(`atfmrmc.com`,`www.atfmrmc.com`)"
+        - "traefik.http.routers.portfolio-2023.rule=Host(`atfmrmc.com`)"
         - "traefik.http.routers.portfolio-2023.entrypoints=websecure"
         - "traefik.http.routers.portfolio-2023.tls=true"
         - "traefik.http.routers.portfolio-2023.tls.certresolver=letsencrypt"
