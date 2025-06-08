@@ -10,7 +10,7 @@ services:
         - "traefik.http.routers.portfolio-2023.rule=Host(`atfmrmc.com`,`www.atfmrmc.com`)"
         - "traefik.http.routers.portfolio-2023.entrypoints=websecure"
         - "traefik.http.routers.portfolio-2023.tls=true"
-        - "traefik.http.routers.portfolio-2023.tls.certresolver=myresolver"
+        - "traefik.http.routers.portfolio-2023.tls.certresolver=letsencrypt"
     networks:
       - solar-system
 
